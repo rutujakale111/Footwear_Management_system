@@ -18,7 +18,7 @@ This project is ideal for managing a small to medium footwear store, keeping tra
 - **HTML/CSS:** Used for the frontend design.
 - **SQLite:** Default database for the project (can be changed to PostgreSQL, MySQL, etc. if required).
 - **Pillow:** Library for handling image files (for product images).
-- **JavaScript (optional):** For any client-side interactions or dynamic behavior.
+
 
 ## Project Structure
 footwear-management-system/
@@ -60,18 +60,19 @@ footwear-management-system/
 cd footwear-management-system
 Create and Activate a Virtual Environment:
 
-Create a virtual environment (optional but recommended):
+**Create a virtual environment (optional but recommended):**
 
 python -m venv env
 Activate the virtual environment:
 
-On Windows:
+**On Windows:**
 
 .\env\Scripts\activate
-On macOS/Linux:
+**On macOS/Linux:**
 
 source env/bin/activate
-Install the Required Dependencies:
+
+**Install the Required Dependencies:**
 
 Install the required libraries listed in requirements.txt (you may need to create this file if it doesn't exist):
 
@@ -81,8 +82,9 @@ If Pillow is not listed, install it manually:
 python -m pip install Pillow
 Apply Migrations:
 
-Run the following command to set up the database:
 
+Run the following command to set up the database:
+python manage.py makemigrations
 python manage.py migrate
 Create a Superuser (Admin):
 
