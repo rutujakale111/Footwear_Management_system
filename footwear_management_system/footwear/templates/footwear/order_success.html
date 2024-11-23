@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'footwear/base.html' %}
+
+{% block content %}
+    <h2>Order Successful</h2>
+    <p>Your order for {{ order.quantity }} pair(s) of {{ order.footwear.name }} has been placed successfully.</p>
+    <p>Total Price: ${{ order.total_price }}</p>
+{% endblock %}
+</body>
+</html>
