@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'footwear/base.html' %}
+
+{% block content %}
+    <h2>Place Order for {{ footwear.name }}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="{{ footwear.stock }}" required>
+        <button type="submit">Place Order</button>
+    </form>
+{% endblock %}
+</body>
+</html>

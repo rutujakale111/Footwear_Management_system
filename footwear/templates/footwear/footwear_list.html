@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'footwear/base.html' %}
+
+{% block content %}
+    <h2>Footwear Products</h2>
+    <div class="container">
+        {% for product in products %}
+            <div class="product-card">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <h2>{{ product.name }}</h2>
+                <p>{{ product.description }}</p>
+                <p>Price: ${{ product.price }}</p>
+                <p>Stock: {{ product.stock }}</p>
+                <a href="{% url 'place_order' footwear_id=product.id %}">Place Order</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+</body>
+</html>
